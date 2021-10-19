@@ -21,6 +21,13 @@ Scatter of penguin flipper length on x vs. body mass on y axis w/ points having 
 penguins_graph <- ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
   geom_point(aes(color = species))
 
-penguins_graph
+
+ggplotly(penguins_graph)
+```
+
+Create a nicer data table
+
+```{r}
+datatable(penguins)
 ```
 
