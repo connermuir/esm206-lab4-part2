@@ -11,6 +11,7 @@ library(palmerpenguins)
 library(tidyverse)
 library(plotly)
 library(DT)
+library(here)
 ```
 
 Scatter of penguin flipper length on x vs. body mass on y axis w/ points having different colors based on species. 
@@ -30,4 +31,17 @@ Create a nicer data table
 ```{r}
 datatable(penguins)
 ```
+
+Column graph with geom_bar of counts of penguins by island with fill color indicating species. Then save using ggsave.
+
+```{r}
+ggplot(data = penguins, aes(x = island)) +
+  geom_bar(aes(fill = species)) +
+  scale_fill_manual(values = c("goldenrod", "goldenrod2", "goldenrod4"))
+
+ggsave(here("final_figures", "island_counts.png"))
+```
+
+
+
 
